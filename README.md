@@ -12,7 +12,7 @@ npm install sentry-api
 
 ## Documentation
 
-[http://pifantastic.github.io/node-sentry-api/](http://pifantastic.github.io/node-sentry-api/)
+[http://taskcluster.github.io/node-sentry-api/](http://taskcluster.github.io/node-sentry-api/)
 
 ## Example
 
