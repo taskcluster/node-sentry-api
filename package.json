@@ -12,8 +12,8 @@
   "author": "Aaron Forsander",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.65.0",
-    "winston": "^2.1.0"
+    "debug": "^4.1.1",
+    "request": "^2.65.0"
   },
   "devDependencies": {
     "nock": "^2.17.0",
