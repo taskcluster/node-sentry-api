@@ -16,8 +16,8 @@
     "request": "^2.65.0"
   },
   "devDependencies": {
-    "nock": "^2.17.0",
-    "nodeunit": "^0.9.1",
+    "nock": "^13.0.2",
+    "nodeunit": "^0.11.3",
     "yuidoc-lucid-theme": "^0.1.1",
     "yuidocjs": "^0.9.0"
   }
