@@ -1,11 +1,8 @@
 # sentry-api
 
-![Build Status](https://travis-ci.org/pifantastic/node-sentry-api.svg?branch=master)
-![Dependency Status](https://david-dm.org/pifantastic/node-sentry-api.svg)
+A node client for the [Sentry API](https://docs.sentry.io/api/).  This is distinct from the reporting API, for which Sentry itself publishes useful libraries.
 
-A node client for the [Sentry](https://getsentry.com/welcome/) web API.
-
-More information about the Sentry web API can be found [here](https://docs.getsentry.com/hosted/api/).
+This library is in *maintenance mode*: bug-fixes and version-bumps will be applied, but new functionality will not be developed.
 
 ## Installation
 
