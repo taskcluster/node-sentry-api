@@ -21,7 +21,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.1.0</b>
+                    API Docs for Version: <b>0.1.1</b>
                 </p>
             </li>
         </div>
@@ -33,141 +33,141 @@
 <div class="container">
     <div class="row">
         <div class="span3">
-	    <div>
-	        <div id="sidebar">
-	        <div id="classes">
-	            <ul id="api-classes" class="nav nav-list">
-	                    <li><a href="../classes/Client.html">Client</a></li>
-	                    <li><a href="../classes/DSN.html">DSN</a></li>
-	                    <li><a href="../classes/Events.html">Events</a></li>
-	                    <li><a href="../classes/Organizations.html">Organizations</a></li>
-	                    <li><a href="../classes/Projects.html">Projects</a></li>
-	                    <li><a href="../classes/Releases.html">Releases</a></li>
-	                    <li><a href="../classes/Teams.html">Teams</a></li>
-	            </ul>
-	        </div>
-	        </div>
-	    </div>
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/Client.html">Client</a></li>
+                <li><a href="../classes/DSN.html">DSN</a></li>
+                <li><a href="../classes/Events.html">Events</a></li>
+                <li><a href="../classes/Organizations.html">Organizations</a></li>
+                <li><a href="../classes/Projects.html">Projects</a></li>
+                <li><a href="../classes/Releases.html">Releases</a></li>
+                <li><a href="../classes/Teams.html">Teams</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
         </div>
         <div class="span9">
-                <form id="options-form" class="form-inline pull-right">
-                    Show:
-                    <label for="api-show-inherited" class="checkbox">
-                        <input type="checkbox" id="api-show-inherited" checked>
-                        Inherited
-                    </label>
-            
-                    <label for="api-show-protected" class="checkbox">
-                        <input type="checkbox" id="api-show-protected">
-                        Protected
-                    </label>
-            
-                    <label for="api-show-private" class="checkbox">
-                        <input type="checkbox" id="api-show-private">
-                        Private
-                    </label>
-                    <label for="api-show-deprecated" class="checkbox">
-                        <input type="checkbox" id="api-show-deprecated">
-                        Deprecated
-                    </label>
-            
-                </form>
-            
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <div class="page-header">
-                            <h1>lib/organizations.js <small>File</small></h1>
-                        </div>
-                        
-                        <div class="file">
-                            <pre class="prettyprint linenums">
-                        var util = require(&#x27;util&#x27;);
-                        
-                        /**
-                         * Provides methods for interacting with Organizations in the Sentry API.
-                         *
-                         * @class Organizations
-                         * @constructor
-                         * @param {Client} client
-                         */
-                        var Organizations = function(client) {
-                          this.client = client;
-                        }
-                        
-                        /**
-                         * Retrieve an organization.
-                         *
-                         * @method get
-                         * @param  {String}   orgSlug  Organization slug.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Organizations.prototype.get = function(orgSlug, callback) {
-                          var path = util.format(&#x27;organizations/%s/&#x27;, orgSlug);
-                          return this.client.get(path, callback);
-                        }
-                        
-                        /**
-                         * Create a new organization.
-                         *
-                         * @method create
-                         * @param  {Object}   body
-                         * @param  {String}   body.name The human readable name for the new organization.
-                         * @param  {String}   body.slug The unique URL slug for this organization. If this is not provided a slug is automatically generated based on the name.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Organizations.prototype.create = function(body, callback) {
-                          return this.client.post(&#x27;organizations/&#x27;, body, callback);
-                        }
-                        
-                        /**
-                         * Delete an organization.
-                         *
-                         * @method delete
-                         * @param  {String}   orgSlug  Organization slug.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Organizations.prototype.delete = function(orgSlug, callback) {
-                          var path = util.format(&#x27;organizations/%s/&#x27;, orgSlug);
-                          return this.client.delete(path, callback);
-                        }
-                        
-                        /**
-                         * Update an organization.
-                         *
-                         * @method update
-                         * @param  {String}   orgSlug  Organization slug.
-                         * @param  {Object}   body
-                         * @param  {String}   body.name An optional new name for the organization.
-                         * @param  {String}   body.slug An optional new slug for the organization. Needs to be available and unique.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Organizations.prototype.update = function(orgSlug, body, callback) {
-                          var path = util.format(&#x27;organizations/%s/&#x27;, orgSlug);
-                          return this.client.put(path, callback);
-                        }
-                        
-                        /**
-                         * Retrieve an organization&#x27;s projects.
-                         *
-                         * @method projects
-                         * @param  {String}   orgSlug  Organization slug.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Organizations.prototype.projects = function(orgSlug, callback) {
-                          var path = util.format(&#x27;organizations/%s/projects/&#x27;, orgSlug);
-                          return this.client.get(path, callback);
-                        }
-                        
-                        module.exports = Organizations;
-                        
-                            </pre>
-                        </div>
+<div class="page-header">
+    <h1>lib/organizations.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+var util = require(&#x27;util&#x27;);
+
+/**
+ * Provides methods for interacting with Organizations in the Sentry API.
+ *
+ * @class Organizations
+ * @constructor
+ * @param {Client} client
+ */
+var Organizations = function(client) {
+  this.client = client;
+}
+
+/**
+ * Retrieve an organization.
+ *
+ * @method get
+ * @param  {String}   orgSlug  Organization slug.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Organizations.prototype.get = function(orgSlug, callback) {
+  var path = util.format(&#x27;organizations/%s/&#x27;, orgSlug);
+  return this.client.get(path, callback);
+}
+
+/**
+ * Create a new organization.
+ *
+ * @method create
+ * @param  {Object}   body
+ * @param  {String}   body.name The human readable name for the new organization.
+ * @param  {String}   body.slug The unique URL slug for this organization. If this is not provided a slug is automatically generated based on the name.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Organizations.prototype.create = function(body, callback) {
+  return this.client.post(&#x27;organizations/&#x27;, body, callback);
+}
+
+/**
+ * Delete an organization.
+ *
+ * @method delete
+ * @param  {String}   orgSlug  Organization slug.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Organizations.prototype.delete = function(orgSlug, callback) {
+  var path = util.format(&#x27;organizations/%s/&#x27;, orgSlug);
+  return this.client.delete(path, callback);
+}
+
+/**
+ * Update an organization.
+ *
+ * @method update
+ * @param  {String}   orgSlug  Organization slug.
+ * @param  {Object}   body
+ * @param  {String}   body.name An optional new name for the organization.
+ * @param  {String}   body.slug An optional new slug for the organization. Needs to be available and unique.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Organizations.prototype.update = function(orgSlug, body, callback) {
+  var path = util.format(&#x27;organizations/%s/&#x27;, orgSlug);
+  return this.client.put(path, callback);
+}
+
+/**
+ * Retrieve an organization&#x27;s projects.
+ *
+ * @method projects
+ * @param  {String}   orgSlug  Organization slug.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Organizations.prototype.projects = function(orgSlug, callback) {
+  var path = util.format(&#x27;organizations/%s/projects/&#x27;, orgSlug);
+  return this.client.get(path, callback);
+}
+
+module.exports = Organizations;
+
+    </pre>
+</div>
                     </div>
                 </div>
             </div>

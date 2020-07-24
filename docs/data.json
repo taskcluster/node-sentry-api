@@ -3,7 +3,7 @@
         "name": "Sentry API",
         "description": "Client library for interacting with the Sentry API",
         "url": "https://github.com/pifantastic/node-sentry-api",
-        "version": "0.1.0"
+        "version": "0.1.1"
     },
     "files": {
         "lib/client.js": {
@@ -232,7 +232,7 @@
     "classitems": [
         {
             "file": "lib/client.js",
-            "line": 60,
+            "line": 67,
             "description": "Contains methods related to Sentry Projects.",
             "itemtype": "property",
             "name": "projects",
@@ -241,7 +241,7 @@
         },
         {
             "file": "lib/client.js",
-            "line": 67,
+            "line": 74,
             "description": "Contains methods related to Sentry Organizations.",
             "itemtype": "property",
             "name": "organizations",
@@ -250,7 +250,7 @@
         },
         {
             "file": "lib/client.js",
-            "line": 74,
+            "line": 81,
             "description": "Contains methods related to Sentry Releases.",
             "itemtype": "property",
             "name": "releases",
@@ -259,7 +259,7 @@
         },
         {
             "file": "lib/client.js",
-            "line": 81,
+            "line": 88,
             "description": "Contains methods related to Sentry Teams.",
             "itemtype": "property",
             "name": "teams",
@@ -268,7 +268,7 @@
         },
         {
             "file": "lib/client.js",
-            "line": 88,
+            "line": 95,
             "description": "Contains methods related to Sentry Events.",
             "itemtype": "property",
             "name": "events",
@@ -277,7 +277,7 @@
         },
         {
             "file": "lib/client.js",
-            "line": 95,
+            "line": 102,
             "description": "Make a request to the Sentry API.",
             "itemtype": "method",
             "name": "request",
@@ -306,7 +306,7 @@
         },
         {
             "file": "lib/client.js",
-            "line": 149,
+            "line": 166,
             "description": "Convenience method for making GET requests.",
             "itemtype": "method",
             "name": "get",
@@ -335,7 +335,7 @@
         },
         {
             "file": "lib/client.js",
-            "line": 162,
+            "line": 179,
             "description": "Convenience method for making POST requests.",
             "itemtype": "method",
             "name": "post",
@@ -364,7 +364,7 @@
         },
         {
             "file": "lib/client.js",
-            "line": 175,
+            "line": 192,
             "description": "Convenience method for making DELETE requests.",
             "itemtype": "method",
             "name": "delete",
@@ -388,7 +388,7 @@
         },
         {
             "file": "lib/client.js",
-            "line": 187,
+            "line": 204,
             "description": "Convenience method for making PUT requests.",
             "itemtype": "method",
             "name": "put",

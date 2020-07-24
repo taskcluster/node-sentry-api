@@ -21,7 +21,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.1.0</b>
+                    API Docs for Version: <b>0.1.1</b>
                 </p>
             </li>
         </div>
@@ -33,229 +33,229 @@
 <div class="container">
     <div class="row">
         <div class="span3">
-	    <div>
-	        <div id="sidebar">
-	        <div id="classes">
-	            <ul id="api-classes" class="nav nav-list">
-	                    <li><a href="../classes/Client.html">Client</a></li>
-	                    <li><a href="../classes/DSN.html">DSN</a></li>
-	                    <li><a href="../classes/Events.html">Events</a></li>
-	                    <li><a href="../classes/Organizations.html">Organizations</a></li>
-	                    <li><a href="../classes/Projects.html">Projects</a></li>
-	                    <li><a href="../classes/Releases.html">Releases</a></li>
-	                    <li><a href="../classes/Teams.html">Teams</a></li>
-	            </ul>
-	        </div>
-	        </div>
-	    </div>
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/Client.html">Client</a></li>
+                <li><a href="../classes/DSN.html">DSN</a></li>
+                <li><a href="../classes/Events.html">Events</a></li>
+                <li><a href="../classes/Organizations.html">Organizations</a></li>
+                <li><a href="../classes/Projects.html">Projects</a></li>
+                <li><a href="../classes/Releases.html">Releases</a></li>
+                <li><a href="../classes/Teams.html">Teams</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
         </div>
         <div class="span9">
-                <form id="options-form" class="form-inline pull-right">
-                    Show:
-                    <label for="api-show-inherited" class="checkbox">
-                        <input type="checkbox" id="api-show-inherited" checked>
-                        Inherited
-                    </label>
-            
-                    <label for="api-show-protected" class="checkbox">
-                        <input type="checkbox" id="api-show-protected">
-                        Protected
-                    </label>
-            
-                    <label for="api-show-private" class="checkbox">
-                        <input type="checkbox" id="api-show-private">
-                        Private
-                    </label>
-                    <label for="api-show-deprecated" class="checkbox">
-                        <input type="checkbox" id="api-show-deprecated">
-                        Deprecated
-                    </label>
-            
-                </form>
-            
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <div class="page-header">
-                            <h1>lib/releases.js <small>File</small></h1>
-                        </div>
-                        
-                        <div class="file">
-                            <pre class="prettyprint linenums">
-                        var util = require(&#x27;util&#x27;);
-                        
-                        /**
-                         * Provides methods for interacting with Releases in the Sentry API.
-                         *
-                         * @class Releases
-                         * @constructor
-                         * @param {Client} client
-                         */
-                        var Releases = function(client) {
-                          this.client = client;
-                        }
-                        
-                        /**
-                         * Retrieve a release.
-                         *
-                         * @method get
-                         * @param  {String}   orgSlug     Organization slug.
-                         * @param  {String}   projectSlug Project slug.
-                         * @param  {String}   version     Release version.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Releases.prototype.get = function(orgSlug, projectSlug, version, callback) {
-                          var path = util.format(&#x27;projects/%s/%s/releases/%s/&#x27;, orgSlug, projectSlug, version);
-                          return this.client.get(path, {}, callback);
-                        }
-                        
-                        /**
-                         * Create a new release.
-                         *
-                         * @method create
-                         * @param  {String}   orgSlug     Organization slug.
-                         * @param  {String}   projectSlug Project slug.
-                         * @param  {Object}   body
-                         * @param  {String}   body.version A version identifier for this release. Can be a version number, a commit hash etc.
-                         * @param  {String}   body.ref Aan optional commit reference. This is useful if a tagged version has been provided.
-                         * @param  {String}   body.url A URL that points to the release. This can be the path to an online interface to the sourcecode for instance.
-                         * @param  {Date}     body.dateStarted An optional date that indicates when the release process started.
-                         * @param  {Date}     body.dateReleased An optional date that indicates when the release went live. If not provided the current time is assumed.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Releases.prototype.create = function(orgSlug, projectSlug, body, callback) {
-                          var path = util.format(&#x27;projects/%s/%s/releases/&#x27;, orgSlug, projectSlug);
-                          return this.client.post(path, body, callback);
-                        }
-                        
-                        /**
-                         * Delete a release.
-                         *
-                         * @method delete
-                         * @param  {String}   orgSlug     Organization slug.
-                         * @param  {String}   projectSlug Project slug.
-                         * @param  {String}   version     Release version.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Releases.prototype.delete = function(orgSlug, projectSlug, version, callback) {
-                          var path = util.format(&#x27;projects/%s/%s/releases/%s/&#x27;, orgSlug, projectSlug, version);
-                          return this.client.delete(path, callback);
-                        }
-                        
-                        /**
-                         * Update a release.
-                         *
-                         * @method update
-                         * @param  {String}   orgSlug     Organization slug.
-                         * @param  {String}   projectSlug Project slug.
-                         * @param  {String}   version     Release version.
-                         * @param  {Object}   body
-                         * @param  {String}   body.ref Aan optional commit reference. This is useful if a tagged version has been provided.
-                         * @param  {String}   body.url A URL that points to the release. This can be the path to an online interface to the sourcecode for instance.
-                         * @param  {Date}     body.dateStarted An optional date that indicates when the release process started.
-                         * @param  {Date}     body.dateReleased An optional date that indicates when the release went live. If not provided the current time is assumed.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Releases.prototype.update = function(orgSlug, projectSlug, version, body, callback) {
-                          var path = util.format(&#x27;projects/%s/%s/releases/%s/&#x27;, orgSlug, projectSlug, version);
-                          return this.client.put(path, body, callback);
-                        }
-                        
-                        /**
-                         * List all files.
-                         *
-                         * @method files
-                         * @param  {String}   orgSlug     Organization slug.
-                         * @param  {String}   projectSlug Project slug.
-                         * @param  {String}   version     Release version.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Releases.prototype.files = function(orgSlug, projectSlug, version, callback) {
-                          var path = util.format(&#x27;projects/%s/%s/releases/%s/files/&#x27;, orgSlug, projectSlug, version);
-                          return this.client.get(path, {}, callback);
-                        }
-                        
-                        /**
-                         * Retrieve a file.
-                         *
-                         * @method getFile
-                         * @param  {String}   orgSlug     Organization slug.
-                         * @param  {String}   projectSlug Project slug.
-                         * @param  {String}   version     Release version.
-                         * @param  {String}   fileID      File ID.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Releases.prototype.getFile = function(orgSlug, projectSlug, version, fileId, callback) {
-                          var path = util.format(&#x27;projects/%s/%s/releases/%s/files/%s/&#x27;, orgSlug, projectSlug, version, fileId);
-                          return this.client.get(path, {}, callback);
-                        }
-                        
-                        /**
-                         * Upload a new file.
-                         *
-                         * @method createFile
-                         * @param  {String}   orgSlug     Organization slug.
-                         * @param  {String}   projectSlug Project slug.
-                         * @param  {String}   version     Release version.
-                         * @param  {Object}   formData
-                         * @param  {String}   formData.name The name (full path) of the file.
-                         * @param  {File}     formData.file The multipart encoded file.
-                         * @param  {String}   formData.header This parameter can be supplied multiple times to attach headers to the file. Each header is a string in the format key:value. For instance it can be used to define a content type.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Releases.prototype.createFile = function(orgSlug, projectSlug, version, formData, callback) {
-                          var path = util.format(&#x27;projects/%s/%s/releases/%s/files/&#x27;, orgSlug, projectSlug, version);
-                          return this.client.request(path, {
-                            method: &#x27;POST&#x27;,
-                            formData: formData,
-                          }, callback);
-                        }
-                        
-                        /**
-                         * Delete a file.
-                         *
-                         * @method deleteFile
-                         * @param  {String}   orgSlug     Organization slug.
-                         * @param  {String}   projectSlug Project slug.
-                         * @param  {String}   version     Release version.
-                         * @param  {String}   fileId      The ID of the file to delete.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Releases.prototype.deleteFile = function(orgSlug, projectSlug, version, fileId, callback) {
-                          var path = util.format(&#x27;projects/%s/%s/releases/%s/files/%s/&#x27;, orgSlug, projectSlug, version, fileId);
-                          return this.client.delete(path, callback);
-                        }
-                        
-                        /**
-                         * Update a file.
-                         *
-                         * @method updateFile
-                         * @param  {String}   orgSlug     Organization slug.
-                         * @param  {String}   projectSlug Project slug.
-                         * @param  {String}   version     Release version.
-                         * @param  {String}   fileId      The ID of the file to update.
-                         * @param  {Object}   body
-                         * @param  {String}   body.name The new name of the file.
-                         * @param  {Function} callback
-                         * @return {Promise}
-                         */
-                        Releases.prototype.updateFile = function(orgSlug, projectSlug, version, fileId, body, callback) {
-                          var path = util.format(&#x27;projects/%s/%s/releases/%s/files/%s/&#x27;, orgSlug, projectSlug, version, fileId);
-                          return this.client.put(path, body, callback);
-                        }
-                        
-                        module.exports = Releases;
-                        
-                            </pre>
-                        </div>
+<div class="page-header">
+    <h1>lib/releases.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+var util = require(&#x27;util&#x27;);
+
+/**
+ * Provides methods for interacting with Releases in the Sentry API.
+ *
+ * @class Releases
+ * @constructor
+ * @param {Client} client
+ */
+var Releases = function(client) {
+  this.client = client;
+}
+
+/**
+ * Retrieve a release.
+ *
+ * @method get
+ * @param  {String}   orgSlug     Organization slug.
+ * @param  {String}   projectSlug Project slug.
+ * @param  {String}   version     Release version.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Releases.prototype.get = function(orgSlug, projectSlug, version, callback) {
+  var path = util.format(&#x27;projects/%s/%s/releases/%s/&#x27;, orgSlug, projectSlug, version);
+  return this.client.get(path, {}, callback);
+}
+
+/**
+ * Create a new release.
+ *
+ * @method create
+ * @param  {String}   orgSlug     Organization slug.
+ * @param  {String}   projectSlug Project slug.
+ * @param  {Object}   body
+ * @param  {String}   body.version A version identifier for this release. Can be a version number, a commit hash etc.
+ * @param  {String}   body.ref Aan optional commit reference. This is useful if a tagged version has been provided.
+ * @param  {String}   body.url A URL that points to the release. This can be the path to an online interface to the sourcecode for instance.
+ * @param  {Date}     body.dateStarted An optional date that indicates when the release process started.
+ * @param  {Date}     body.dateReleased An optional date that indicates when the release went live. If not provided the current time is assumed.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Releases.prototype.create = function(orgSlug, projectSlug, body, callback) {
+  var path = util.format(&#x27;projects/%s/%s/releases/&#x27;, orgSlug, projectSlug);
+  return this.client.post(path, body, callback);
+}
+
+/**
+ * Delete a release.
+ *
+ * @method delete
+ * @param  {String}   orgSlug     Organization slug.
+ * @param  {String}   projectSlug Project slug.
+ * @param  {String}   version     Release version.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Releases.prototype.delete = function(orgSlug, projectSlug, version, callback) {
+  var path = util.format(&#x27;projects/%s/%s/releases/%s/&#x27;, orgSlug, projectSlug, version);
+  return this.client.delete(path, callback);
+}
+
+/**
+ * Update a release.
+ *
+ * @method update
+ * @param  {String}   orgSlug     Organization slug.
+ * @param  {String}   projectSlug Project slug.
+ * @param  {String}   version     Release version.
+ * @param  {Object}   body
+ * @param  {String}   body.ref Aan optional commit reference. This is useful if a tagged version has been provided.
+ * @param  {String}   body.url A URL that points to the release. This can be the path to an online interface to the sourcecode for instance.
+ * @param  {Date}     body.dateStarted An optional date that indicates when the release process started.
+ * @param  {Date}     body.dateReleased An optional date that indicates when the release went live. If not provided the current time is assumed.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Releases.prototype.update = function(orgSlug, projectSlug, version, body, callback) {
+  var path = util.format(&#x27;projects/%s/%s/releases/%s/&#x27;, orgSlug, projectSlug, version);
+  return this.client.put(path, body, callback);
+}
+
+/**
+ * List all files.
+ *
+ * @method files
+ * @param  {String}   orgSlug     Organization slug.
+ * @param  {String}   projectSlug Project slug.
+ * @param  {String}   version     Release version.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Releases.prototype.files = function(orgSlug, projectSlug, version, callback) {
+  var path = util.format(&#x27;projects/%s/%s/releases/%s/files/&#x27;, orgSlug, projectSlug, version);
+  return this.client.get(path, {}, callback);
+}
+
+/**
+ * Retrieve a file.
+ *
+ * @method getFile
+ * @param  {String}   orgSlug     Organization slug.
+ * @param  {String}   projectSlug Project slug.
+ * @param  {String}   version     Release version.
+ * @param  {String}   fileID      File ID.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Releases.prototype.getFile = function(orgSlug, projectSlug, version, fileId, callback) {
+  var path = util.format(&#x27;projects/%s/%s/releases/%s/files/%s/&#x27;, orgSlug, projectSlug, version, fileId);
+  return this.client.get(path, {}, callback);
+}
+
+/**
+ * Upload a new file.
+ *
+ * @method createFile
+ * @param  {String}   orgSlug     Organization slug.
+ * @param  {String}   projectSlug Project slug.
+ * @param  {String}   version     Release version.
+ * @param  {Object}   formData
+ * @param  {String}   formData.name The name (full path) of the file.
+ * @param  {File}     formData.file The multipart encoded file.
+ * @param  {String}   formData.header This parameter can be supplied multiple times to attach headers to the file. Each header is a string in the format key:value. For instance it can be used to define a content type.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Releases.prototype.createFile = function(orgSlug, projectSlug, version, formData, callback) {
+  var path = util.format(&#x27;projects/%s/%s/releases/%s/files/&#x27;, orgSlug, projectSlug, version);
+  return this.client.request(path, {
+    method: &#x27;POST&#x27;,
+    formData: formData,
+  }, callback);
+}
+
+/**
+ * Delete a file.
+ *
+ * @method deleteFile
+ * @param  {String}   orgSlug     Organization slug.
+ * @param  {String}   projectSlug Project slug.
+ * @param  {String}   version     Release version.
+ * @param  {String}   fileId      The ID of the file to delete.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Releases.prototype.deleteFile = function(orgSlug, projectSlug, version, fileId, callback) {
+  var path = util.format(&#x27;projects/%s/%s/releases/%s/files/%s/&#x27;, orgSlug, projectSlug, version, fileId);
+  return this.client.delete(path, callback);
+}
+
+/**
+ * Update a file.
+ *
+ * @method updateFile
+ * @param  {String}   orgSlug     Organization slug.
+ * @param  {String}   projectSlug Project slug.
+ * @param  {String}   version     Release version.
+ * @param  {String}   fileId      The ID of the file to update.
+ * @param  {Object}   body
+ * @param  {String}   body.name The new name of the file.
+ * @param  {Function} callback
+ * @return {Promise}
+ */
+Releases.prototype.updateFile = function(orgSlug, projectSlug, version, fileId, body, callback) {
+  var path = util.format(&#x27;projects/%s/%s/releases/%s/files/%s/&#x27;, orgSlug, projectSlug, version, fileId);
+  return this.client.put(path, body, callback);
+}
+
+module.exports = Releases;
+
+    </pre>
+</div>
                     </div>
                 </div>
             </div>
