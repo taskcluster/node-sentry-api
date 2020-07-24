@@ -33,8 +33,9 @@ tasks:
           if ! git diff --quiet; then
             echo "Documentation needs to be updated by running 'make'";
             git diff;
+            exit 1;
           fi;
-          false
+          true
     metadata:
       name: docs-check
       description: Check that docs are updated
