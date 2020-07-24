@@ -30,7 +30,7 @@ tasks:
           git checkout ${head_rev} &&
           yarn &&
           make &&
-          if git diff --quiet; then
+          if ! git diff --quiet; then
             echo "Documentation needs to be updated by running 'make'";
             git diff;
           fi;
