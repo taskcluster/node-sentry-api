@@ -28,6 +28,7 @@ tasks:
           cd repo &&
           git config advice.detachedHead false &&
           git checkout ${head_rev} &&
+          yarn &&
           make &&
           if git diff --quiet; then
             echo "Documentation needs to be updated by running 'make'";
