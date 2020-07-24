@@ -24,7 +24,7 @@ exports.testBasicAuth = function(test) {
 
   var request = nock('https://host.com', {
       reqheaders: {
-        'authorization': 'Basic ' + new Buffer('PUBLIC:').toString('base64'),
+        'authorization': 'Basic ' + Buffer.from('PUBLIC:').toString('base64'),
         'accept': 'application/json'
       }
     })
@@ -42,7 +42,7 @@ exports.testBasicAuth = function(test) {
 
 exports.testBearerAuth = function(test) {
   test.expect(2);
-  var token = new Buffer('PUBLIC:').toString('base64');
+  var token = Buffer.from('PUBLIC:').toString('base64');
 
   var request = nock('https://host.com', {
       reqheaders: {

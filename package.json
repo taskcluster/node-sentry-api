@@ -12,14 +12,12 @@
   "author": "Aaron Forsander",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^3.10.1",
-    "promise": "^7.0.4",
-    "request": "^2.65.0",
-    "winston": "^2.1.0"
+    "debug": "^4.1.1",
+    "request": "^2.65.0"
   },
   "devDependencies": {
-    "nock": "^2.17.0",
-    "nodeunit": "^0.9.1",
+    "nock": "^13.0.2",
+    "nodeunit": "^0.11.3",
     "yuidoc-lucid-theme": "^0.1.1",
     "yuidocjs": "^0.9.0"
   }
